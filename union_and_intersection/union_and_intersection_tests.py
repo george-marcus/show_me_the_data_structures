@@ -52,4 +52,26 @@ for i in element_2:
     linked_list_5.append(i)
 
 print(union(linked_list_4, linked_list_5))
-print(intersection(linked_list_4, linked_list_4))
+print(intersection(linked_list_4, linked_list_5))
+
+
+# Test case 4
+
+linked_list_6 = LinkedList()
+linked_list_7 = LinkedList()
+
+element_1 = []
+element_2 = []
+
+for i in element_1:
+    linked_list_6.append(i)
+
+for i in element_2:
+    linked_list_7.append(i)
+try:
+
+    print(union(linked_list_6, linked_list_7))
+    print(intersection(linked_list_6, linked_list_7))
+
+except ValueError as err:
+    print(err)

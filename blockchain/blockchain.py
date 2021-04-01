@@ -7,18 +7,25 @@ class BlockChain:
         self.blockchain = []
 
     def add_block(self, data):
-        if not data:
-            print("You can't add empty values to blockchain")
-            return
+        try:
 
-        if len(self.blockchain) == 0:
-            block = Block(data)
+            if len(self.blockchain) == 0:
+                block = Block(data)
 
-        else:
-            previous_hash_string = self.blockchain[-1].hash
-            block = Block(data, previous_hash_string)
+            else:
+                previous_block = self.blockchain[-1]
+                previous_hash_string = previous_block.hash
+                previous_time_stamp = previous_block.timestamp
+                block = Block(data, previous_hash_string)
 
-        self.blockchain.append(block)
+                if block.timestamp == previous_time_stamp:
+                    print("You Can't add blocks with the same timestamp")
+                    return
+
+            self.blockchain.append(block)
+
+        except ValueError as err:
+            print(err)
 
     def __repr__(self):
 
@@ -28,6 +35,6 @@ class BlockChain:
         blockchain_content = ''
 
         for block in self.blockchain:
-            blockchain_content += f"Blockchain data: {str(block.data)} \n"
+            blockchain_content += f"Blockchain data: {str(block.data)} {str(block.timestamp)} \n"
 
         return blockchain_content

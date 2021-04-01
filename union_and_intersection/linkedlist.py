@@ -11,6 +11,7 @@ class LinkedList:
         while cur_head:
             out_string += str(cur_head.value) + " -> "
             cur_head = cur_head.next
+
         return out_string
 
     def append(self, value):

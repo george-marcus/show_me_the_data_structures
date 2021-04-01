@@ -5,6 +5,9 @@ import hashlib
 class Block:
 
     def __init__(self, data, previous_hash=0):
+        if not data:
+            raise ValueError("You can't create a block with empty data")
+
         self.timestamp = datetime.datetime.now()
         self.data = data
         self.previous_hash = previous_hash
