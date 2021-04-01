@@ -1,0 +1,20 @@
+LRU Cache Analysis:
+
+I Used a dictionary as cache object to allow for constant time access to its items
+
+I used a doubly-ended queue or deque for short as a usage-queue. I found out that I only need to 
+know the head and the tail of this deque at any time, and when the cache dictionary is at full capacity,
+I should pop one element from the deque tail (right side).
+I used this function to move recently used item from right-side if exists and appen it to the left-side of the deque
+to denote the its recent use:
+
+def append_to_left_of_usage_queue(self, key):
+        # remove key from tail (if exists) and append it to head to indicate its recent use
+        if self.cache_usage_queue and self.cache_usage_queue[-1] == key:
+            self.cache_usage_queue.pop()
+
+        self.cache_usage_queue.appendleft(key)
+
+
+Time Complexity: O(1) as I used a Queue for usage, and a Dictionary for cache
+Space Complexity: O(n) as I used a Queue for usage, and a Dictionary for cache

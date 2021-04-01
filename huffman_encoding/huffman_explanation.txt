@@ -1,0 +1,24 @@
+Huffman Encoding And Decoding Analysis:
+
+* Encoding
+
+I used a dictionary to store frequencies to get its items at constant times.
+I used a heap priority queue to store each created node according to a certain order 
+provided by the operators overload on the Node class
+I then popped lowest two nodes to combine their frequencies and to add their huffman_code
+which will be used later when traversing each node on the tree
+
+I kept popping nodes until I'm left with one node
+this one will be the root_node of the tree.
+
+I traversed the tree recursively to return the a concatenated string of huffman_code
+
+* Decoding
+
+I traversed the created tree to get the character of each leaf_node and then combine these characters to get the original string
+
+
+Time Complexity: O(n + m + l) -> o(n) as I loop through all the nodes of the tree, priority queue and frequency_dict
+Space Complexity: O(n + m + l) -> o(n) as I create tree of nodes, priority queue and frequency_dict
+
+

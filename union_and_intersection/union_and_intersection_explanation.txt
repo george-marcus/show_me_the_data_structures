@@ -1,0 +1,11 @@
+Union and Intersection Analysis:
+
+I used sets to get unique values out of each provided linked list
+Then I used the set functions: Union and Intersection according to the required 
+action. Finally I appened the newly created set values to a new linkedslist
+
+Time Complexity: O(n + m) -> O(n) as I loop through sets of combined unique values to append them to the linked list
+
+Space-Complexity: O(n + m) -> o(n) as I created newly sets to store unique values of before appending them to the linked list
+
+

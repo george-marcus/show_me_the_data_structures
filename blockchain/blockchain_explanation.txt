@@ -1,0 +1,8 @@
+Blockchain Analysis:
+
+I implemented the add_block function to do either of those two actions:
+1- if the blockchain list is empty, create a new block and set its hash to zero as a default value
+2- if the blockchain list has values, create the a new block with its hash value calculated from the previous node's hash value of its data
+
+Time Complexity: O(1) as appending to an list happens at constant time
+Space Complexity: O(n) as I needed to append blocks to a blockchain list.

@@ -1,0 +1,8 @@
+Find Files Analysis:
+
+I used looped through each directory and their subdirectories
+recursively and appended each matched file to the matched_files list,
+
+Time Complexity: O(m n) -> o(n) as I loop through all files in directories and sub-directories
+
+Space Complexity: O(m n) -> o(n) as I loop through all files in directories and sub-directories and attach them to a list

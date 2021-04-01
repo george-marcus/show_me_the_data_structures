@@ -1,0 +1,6 @@
+Active Directory Analysis:
+
+I first checked if a user is equal to the froup name or is in a group collection of users
+
+Time Complexity: o(n + m) -> o(n) as I check if a user exists in a list
+Space Complexity: o(n + m) -> o(n) as I create a function recursively for each iteration
